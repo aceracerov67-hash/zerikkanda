@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>INDEX</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;    
+      height: 100vh;
+    }
+
+    form {
+      text-align: center;
+    }
+
+    input {
+      display: block;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body style="background-color: black; color: white;">
+
+<form onsubmit="checkForm(event)">
+    <h1>HOME</h1>
+  <input style="border: 20px solid rgb(150, 150, 150);" id="login" type="text" placeholder="login kiriting" required>
+  <input style="border: 20px solid rgb(150, 150, 150);" id="password" type="password" placeholder="parol kiriting" required>
+
+  <button type="submit" style="background-color: darkcyan; color: aquamarine;">Submit</button>
+</form>
+
+<script>
+  function checkForm(e) {
+    e.preventDefault(); 
+
+    const login = document.getElementById("login").value.trim();
+    const password = document.getElementById("password").value.trim();
+
+    if (login === "" || password === "") {
+      alert("Iltimos, barcha maydonlarni to‘ldiring!");
+      return;
+    }
+    window.location.href = "/home.html";
+  }
+</script>
+
+</body>
+</html>
